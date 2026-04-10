@@ -60,15 +60,11 @@ model SeuModel {
 }
 ```
 
-> Lembre de ajustar o `provider` no `datasource db {}` se mudar o banco.
-
 ### 5. Rodar a migration
 
 ```bash
 npx prisma migrate dev --name init
 ```
-
-> Isso cria as tabelas no banco com base no seu `schema.prisma`.
 
 ### 6. Gerar o Prisma Client
 
@@ -92,8 +88,6 @@ app.get("/seumodel", async (req, res) => {
 ```bash
 npm run dev
 ```
-
-> A API estará disponível em `http://localhost:3000`
 
 ---
 
