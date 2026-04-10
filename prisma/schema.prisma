@@ -1,0 +1,32 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model Usuario {
+  id      Int      @id @default(autoincrement()) // chave primária (id), gerada automaticamente (autoincrement())
+  nome    String                                 // obrigatório
+  email   String   @unique                       // obrigatório e único
+  pedidos Pedido[]                               // relação com a tabela Pedido (relação: [])
+}
+
+model Pedido {
+  id        Int     @id @default(autoincrement()) // chave primária, gerada automaticamente
+  produto   String                                // obrigatório
+  quantidade Int                                  // obrigatório
+  usuario   Usuario @relation(fields: [usuarioId], references: [id]) // relação com Usuario
+  usuarioId Int                                   // chave estrangeira
+}
+
+// Usuario → qual model está sendo referenciado
+// fields: [usuarioId] → qual campo desta tabela (Pedido) é a chave estrangeira
+// references: [id] → qual campo da outra tabela (Usuario) ele aponta 
