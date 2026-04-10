@@ -29,8 +29,8 @@ Template de API REST pronto para reutilizar em novos projetos.
 ### 1. Clonar o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+git clone https://github.com/mateus-zanatta/TemplateApi.git
+cd TemplateApi
 ```
 
 ### 2. Instalar as dependências
@@ -107,8 +107,8 @@ npm run dev
 ## 🔁 Resumo rápido ao clonar
 
 ```bash
-git clone <repo>
-cd <repo>
+git clone https://github.com/mateus-zanatta/TemplateApi.git
+cd TemplateApi
 npm install
 # crie o .env com sua DATABASE_URL
 # edite o prisma/schema.prisma com seus models
